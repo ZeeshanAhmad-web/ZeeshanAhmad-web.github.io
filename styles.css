@@ -895,3 +895,25 @@ img {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%; z-index: 10; 
 }
+
+/* Direct adjustments for your hero scroll section */
+.hero-scroll {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.scroll-text {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.75rem; /* Keeps it clean and elegant */
+  color: #a0a0a0;
+  margin-bottom: 12px; /* Sets the gap right above the line */
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px; /* Adjust this to make the line longer or shorter */
+  background-color: #666666; /* Match your site's subtle gray accents */
+}
