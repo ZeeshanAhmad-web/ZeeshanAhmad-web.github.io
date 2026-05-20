@@ -876,3 +876,22 @@ a { color: inherit; text-decoration: none; transition: color 0.2s ease, opacity 
   margin: 0 auto;
 }
 
+/* Add this to the bottom of styles.css */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-select: none;
+}
+
+/* Add this too if you decide to use the transparent overlay trick */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%; z-index: 10; 
+}
