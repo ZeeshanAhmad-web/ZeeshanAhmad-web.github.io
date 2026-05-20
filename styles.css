@@ -913,3 +913,17 @@ img {
   margin: 0.75rem auto 0 !important;
   transform-origin: top !important;
 }
+
+/* --- Final Fix: Perfect Vertical & Horizontal Centering for Portfolio Button --- */
+.grid-cta {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  
+  /* Equalizes the breathing room above and below the button button */
+  padding: 6rem 0 !important; 
+  margin: 0 auto !important;
+  
+  /* Clears out any fixed heights that override your padding math */
+  min-height: 0 !important; 
+}
