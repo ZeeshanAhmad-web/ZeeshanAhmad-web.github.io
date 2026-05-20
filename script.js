@@ -46,4 +46,12 @@
       }
     });
   }
+
+  // ----- Image Protection (Disable Right-Click) -----
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+  });
+
 })();
