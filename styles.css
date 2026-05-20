@@ -771,18 +771,13 @@ a { color: inherit; text-decoration: none; transition: color 0.2s ease, opacity 
 /* Replace previous behaviour: use flexbox-centered text inside the scroll
    so the trailing letter-spacing pad is balanced on both sides. */
 .hero-scroll {
-  text-indent: 0; /* clear earlier hack */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  padding-left: 0.25em; /* visually balance the trailing letter-spacing on the right */
+  text-indent: 0.25em;
+  display: block;
+  text-align: center;
 }
 
 .hero-scroll::after {
-  /* Pull the line back .125em (half of letter-spacing) to compensate for the padding above */
-  margin-left: -0.125em;
+  margin-left: 0;
 }
 
 /* --- 2. CTA strip: properly center the button vertically even if h2/p empty --- */
@@ -807,9 +802,8 @@ a { color: inherit; text-decoration: none; transition: color 0.2s ease, opacity 
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
-  padding: 3rem 0;
+  padding: 2.5rem 0;
   border-top: 1px solid var(--border);
-  min-height: 120px;
 }
 
 /* --- 3. Portfolio: constrain Sin of Wrath + Virtue of Love so they don't dominate column --- */
