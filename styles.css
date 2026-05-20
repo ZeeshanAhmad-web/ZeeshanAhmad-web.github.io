@@ -914,16 +914,20 @@ img {
   transform-origin: top !important;
 }
 
-/* --- Final Fix: Perfect Vertical & Horizontal Centering for Portfolio Button --- */
+/* --- Final Fix: Perfect Vertical Balance for Portfolio Button --- */
 .grid-cta {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   
-  /* Equalizes the breathing room above and below the button button */
-  padding: 6rem 0 !important; 
-  margin: 0 auto !important;
+  /* 1. Keeps your original 4rem gap to push the line away from the illustrations */
+  margin-top: 4rem !important;
+  margin-bottom: 0 !important;
   
-  /* Clears out any fixed heights that override your padding math */
+  /* 2. Creates perfectly equal breathing room above and below the button inside the lines */
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  
+  /* 3. Clears the fixed height constraint so the padding can do its job mathmetically */
   min-height: 0 !important; 
 }
