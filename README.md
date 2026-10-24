@@ -1,83 +1,54 @@
-# Zeeshan Ahmad — Portfolio Site (v4)
+# zeeshanahmad.art
 
-A custom-built moody/editorial portfolio for an illustrator.
-Hosted on Netlify, domain managed at Hostinger.
+Portfolio of Zeeshan Ahmad, concept artist and illustrator. A single page site hosted on GitHub Pages. No build step: edit the files and push.
 
-## Site structure
+## Structure
 
 ```
-.
-├── index.html                              ← Homepage (8 selected works)
-├── portfolio.html                          ← Full portfolio (19 works)
-├── sketchbook.html                         ← Sketches & studies (placeholder)
-├── about.html                              ← About page
-├── contact.html                            ← Contact page
-├── styles.css
-├── script.js
-├── work/                                   ← 19 individual project pages
-│   ├── masque-of-the-red-death.html
-│   ├── dagon.html
-│   ├── dagons-monolith.html
-│   ├── altar-of-time.html
-│   ├── through-the-gates-of-yomi.html
-│   ├── the-king-in-yellow.html
-│   ├── tyger.html
-│   ├── potion-over-feather-and-bones.html
-│   ├── between-shadow-and-light.html
-│   ├── plasma-revenant.html
-│   ├── sin-of-wrath.html
-│   ├── virtue-of-love.html
-│   ├── quiet-hours.html
-│   ├── bad-blood.html
-│   ├── hfw-ravager.html
-│   ├── hfw-slaughterspine.html
-│   ├── alice-in-otherland-1.html
-│   ├── alice-in-otherland-2.html
-│   └── new-yorker.html
-├── images/
-│   ├── [all final illustrations + thumbnails]
-│   ├── portrait-zeeshan.jpg
-│   ├── works/                              ← One subfolder per project
-│   └── sketchbook/
-└── README.md
+index.html                  The whole site: work grid, sketchbook, about, CV, contact
+assets/css/style.css        All styles
+assets/js/main.js           Filters, viewer, sketchbook drag, animations
+assets/img/                 Artwork. Each piece has a full size file (name.jpg) and a grid size file (name-800.jpg)
+assets/Zeeshan-Ahmad-CV.pdf CV for the Download CV buttons (no phone number or street address)
+assets/og.jpg               Preview image for links shared on social media
+game/ publishing/ product/ personal/   Short links that open the matching filter (zeeshanahmad.art/game)
+about.html contact.html portfolio.html sketchbook.html work/*.html   Old addresses, now redirect to the new page
+404.html                    Shown for any address that does not exist
 ```
 
-## Deploying
+## Links to send
 
-1. Drag the unzipped folder onto your Netlify drop zone (app.netlify.com → Deploys)
-2. Wait ~10 seconds
-3. Refresh zeeshanahmad.art in incognito
+- Studios: https://zeeshanahmad.art/game
+- Publishers: https://zeeshanahmad.art/publishing
+- Everything: https://zeeshanahmad.art/#all-work
 
-## Adding process & mockup images to a project
+## Add a piece
 
-1. Save images into `/images/works/[slug]/` (e.g. `images/works/masque-of-the-red-death/`)
-2. Recommended naming: `process-01.jpg`, `process-02.jpg`, `mockup-01.jpg`, etc.
-3. Open the project HTML in `/work/[slug].html`
-4. Find the placeholder divs and replace with proper `<img>` tags pointing to `../images/works/[slug]/process-01.jpg` etc.
-5. Re-deploy.
+1. Export the artwork as JPG twice: `my-piece.jpg` at about 1600px on the long side, and `my-piece-800.jpg` at about 900px. Put both in `assets/img/`.
+2. In `index.html`, copy any `<article class="card" ...>` block inside `<div class="grid" id="grid">` and change:
+   - `data-cat`: `game`, `publishing`, `product` or `personal`
+   - `data-title`, `data-year`, `data-scope`, the tag text and the `alt` text
+   - the three image paths
+3. Optional:
+   - `data-feat="5"` shows it on the homepage. The number sets its place in the order. Number 1 is the large top image.
+   - `data-gallery="assets/img/a.jpg|assets/img/b.jpg"` adds extra images (mockups, spots, letters) to the viewer.
+   - `data-also="personal"` shows it in a second section too.
+   - `data-desc="..."` adds a short paragraph in the viewer.
+   - `style="object-position:50% 20%"` on the `<img>` moves the crop in the grid.
 
-## What's new in v4
+Cards pair up automatically, so the layout stays balanced whatever you add or remove.
 
-- 11 new illustrations added (Dagon, Bad Blood, HFW Ravager, HFW Slaughterspine, Sin of Wrath, Virtue of Love, Alice in Otherland I & II, Plasma Revenant, Altar of Time, New Yorker, plus updated versions of Potion and Between Shadow)
-- 19 total works in portfolio (up from 8)
-- About page: new portrait image, updated copy
-- Footer: Atlanta removed
-- All instances of "illustration" → "Illustration" (capital I)
-- Fan art pieces (Bad Blood, HFW, Alice, New Yorker) clearly labeled as personal/fan art with IP credits
-- Sketchbook page: cleaned of placeholder copy, ready for content
-- Hero subhead and Selected Work caption removed (cleaner reads)
-- Scroll indicator centering fix
+## Sketchbook
 
-## Editing pages
+Images are listed inside `<div class="track" id="track">`. The list appears twice so the strip can loop: add or remove each image in both halves.
 
-All pages were generated by `build_v4.py`. To regenerate after editing project content,
-you can edit the `projects` list in that script and re-run. Or just edit the HTML directly
-for one-off changes — both work.
+## Old files you can delete
 
-## Image specs
+The new site does not use these. Deleting them makes the repository much smaller:
 
-- Full size: 2400px long edge, JPEG q85
-- Thumbnails: 1200px long edge, q82
-- Portrait: 1200px max
+- `styles.css`
+- `script.js`
+- `images/` (the whole folder)
+- `work/images/` (the whole folder, many files are 10 to 40 MB)
 
-Use https://squoosh.app to compress new images before adding.
+Keep the `work/*.html` files: they redirect old links to the new site.
