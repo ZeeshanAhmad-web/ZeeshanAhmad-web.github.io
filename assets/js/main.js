@@ -251,7 +251,8 @@
     swapTo(srcs[0], img.alt);
     $('#v-title').textContent = d.title;
     $('#v-t').textContent = d.title;
-    $('#v-y').textContent = d.year;
+    $('#v-y').textContent = d.year || '';
+    $('#v-y').parentElement.hidden = !d.year;
     $('#v-c').textContent = catNames[d.cat] || d.cat;
     $('#v-s').textContent = d.scope;
     const desc = $('#v-d');
